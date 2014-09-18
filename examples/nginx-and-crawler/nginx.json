@@ -1,0 +1,7 @@
+{
+  "image": "dockerfile/nginx",
+  "scale": 1,
+  "services": {
+    "nginx": 80
+  }
+}

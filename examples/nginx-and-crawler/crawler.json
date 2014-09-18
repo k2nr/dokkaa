@@ -1,0 +1,12 @@
+{
+  "image": "dockerfile/ubuntu",
+  "scale": 1,
+  "command": [
+      "/bin/bash",
+      "-c",
+      "while true; do curl http://$SERVICE_NGINX_ADDR:$SERVICE_NGINX_PORT; sleep 2; done"
+  ],
+  "links": [
+      "nginx"
+  ]
+}

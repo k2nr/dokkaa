@@ -80,6 +80,8 @@ In this example, the env vars are `$SERVICE_NGINX_ADDR` and `$SERVICE_NGINX_PORT
 
 ## Basic example
 
+See https://github.com/k2nr/dokkaa/blob/master/examples/nginx-and-crawler/
+
 Dokkaa cluster consists of some dokkaa hosts mutually comunicating via etcd. So the first step is to launch dokkaa hosts.
 
 ### 1. Launch Dokkaa cluster
@@ -117,7 +119,7 @@ Suppose we set two manifests: nginx and crawler.
 Let's set nginx manifest to etcd. etcd is running on every dokkaa host, So you can use any dokkaa host's IP as etcd machine.
 
 ```bash
-$ curl -v -L -XPUT -d value=`cat nginx.json` http://<dokkaa IP address>:4001/v2/keys/apps/dummy/nginx/manifest
+$ curl -L -XPUT -d value="`cat nginx.json`" http://<dokkaa IP address>:4001/v2/keys/apps/dummy/nginx/manifest
 ```
 
 #### crawler manifest
@@ -146,7 +148,7 @@ After a few minutes, `nginx` cotainer(the name is `dummy---nginx`) runs on one o
 Then, Let's set the second manifest: crawler.
 
 ```bash
-$ curl -v -L -XPUT -d value=`cat crawler.json` http://<dokkaa IP address>:4001/v2/keys/apps/dummy/crawler/manifest
+$ curl -L -XPUT --data-urlencode value="`cat crawler.json`" http://<dokkaa IP address>:4001/v2/keys/apps/dummy/crawler/manifest
 ```
 
 #### Check out everything is working
