@@ -8,6 +8,11 @@ Please check out each repository for detail.
 
 Dokkaa is the easiest and simplest docker container cluster management platform.
 
+## Articles
+
+* http://k2nr.me/blog/2014/09/18/dokkaa-the-simplest-docker-cluster-platform-for-microservices.html
+  * Japanese
+
 ## Current status
 
 Dokkaa is under heavy development. Its design, API, and any other Usage changes. There are many bugs, Not implemented features.
